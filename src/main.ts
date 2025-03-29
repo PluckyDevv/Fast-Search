@@ -7,15 +7,15 @@ const DEFAULT_FALLBACK = 'g';
 const NOTHING_URL = 'https://github.com/PluckyDevv/Fast-Search';
 
 const url = new URL(window.location.href);
+
 const newDefaultBang = url.searchParams.get('s');
+const removeDefaultBang = url.searchParams.get('r');
 
 if (newDefaultBang && bangs.some((bang) => bang.t === newDefaultBang)) {
   localStorage.setItem('defaultBang', newDefaultBang);
   url.searchParams.delete('s');
   window.history.replaceState({}, '', url.toString());
 }
-
-const removeDefaultBang = url.searchParams.get('r');
 
 if (removeDefaultBang) {
   localStorage.removeItem('defaultBang');
@@ -36,6 +36,11 @@ function getBangUrl() {
   if (!selectedBang) return null;
 
   const cleanQuery = query.replace(BANG_REGEX, ' ').trim();
+
+  if (!cleanQuery) {
+    return new URL(selectedBang.u).origin;
+  }
+
   return selectedBang.u.replace('{{{s}}}', encodeURIComponent(cleanQuery).replace(/%2F/g, '/'));
 }
 
