@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   build: {
@@ -11,4 +12,9 @@ export default defineConfig({
       },
     },
   },
+  plugins: [
+    VitePWA({
+      registerType: 'autoUpdate',
+    }),
+  ],
 });
