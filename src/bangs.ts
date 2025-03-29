@@ -19,6 +19,10 @@ export const bangs = [
     t: '1001',
     u: 'http://1001boom.com/?s={{{s}}}',
   },
+  { 
+    t: 'fsh',
+    u: 'http://fishsocial.eletrix.fr/search?s={{{s}}}',
+  },
   {
     t: '1001fonts',
     u: 'http://www.1001fonts.com/search.html?search={{{s}}}&x=0&y=0',
