@@ -1,5 +1,9 @@
 export const bangs = [
   {
+    t: 'chatgpt',
+    u: 'https://chatgpt.com/?q={{{s}}}',
+  },
+  {
     t: '01net',
     u: 'http://www.01net.com/recherche/recherche.php?searchstring={{{s}}}&chaine=home',
   },
