@@ -1,7 +1,8 @@
 import { bangs } from './bangs';
 import './style.css';
 
-const BANG_REGEX = /(?:^|\s)!([a-z0-9]+)(?:\s|$)/i;
+const BANG_PREFIX_REGEX = /!(\S+)/i;
+const BANG_SUFFIX_REGEX = /(\S+)!/;
 const DEFAULT_BANG = localStorage.getItem('defaultBang');
 const DEFAULT_FALLBACK = 'g';
 const NOTHING_URL = 'https://github.com/PluckyDevv/Fast-Search';
@@ -27,15 +28,16 @@ function getBangUrl() {
   const query = url.searchParams.get('q')?.trim();
   if (!query) return null;
 
-  const match = query.match(BANG_REGEX);
-  const bangId = match?.[1]?.toLowerCase();
+  const prefixMatch = query.match(BANG_PREFIX_REGEX);
+  const suffixMatch = query.match(BANG_SUFFIX_REGEX);
+  const bangId = (prefixMatch?.[1] ?? suffixMatch?.[1])?.toLowerCase();
 
   let selectedBang = bangId ? bangs.find((bang) => bang.t === bangId) : null;
   if (!selectedBang) selectedBang = bangs.find((bang) => bang.t === DEFAULT_BANG);
   if (!selectedBang) selectedBang = bangs.find((bang) => bang.t === DEFAULT_FALLBACK);
   if (!selectedBang) return null;
 
-  const cleanQuery = query.replace(BANG_REGEX, ' ').trim();
+  const cleanQuery = query.replace(BANG_PREFIX_REGEX, '').replace(BANG_SUFFIX_REGEX, '').trim();
 
   if (!cleanQuery) {
     return new URL(selectedBang.u).origin;
