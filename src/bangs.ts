@@ -1,5 +1,9 @@
 export const bangs = [
   {
+    t: 'clg',
+    u: 'https://www.google.com/search?udm=14&q={{{s}}}',
+  },
+  {
     t: 'chatgpt',
     u: 'https://chatgpt.com/?q={{{s}}}',
   },
