@@ -16,6 +16,10 @@ export const bangs = [
     u: 'https://www.bmw2002faq.com/search/?q={{{s}}}',
   },
   {
+    t: 'vyntr',
+    u: 'https://vyntr.com/search?q={{{s}}}',
+  },
+  {
     t: '0bo',
     u: 'http://boxofficemojo.com/search/?q={{{s}}}',
   },
