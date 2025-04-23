@@ -1,4 +1,4 @@
-# Eletrix ~~Fast~~  Search
+# Fast  Search
 
 Fast Search provides a quicker alternative to DuckDuckGo's bangs system. While DuckDuckGo bangs are powerful, they can sometimes be slow. Fast Search uses a lightweight implementation with cached scripts and service workers to deliver faster performance with the same functionality.
 
