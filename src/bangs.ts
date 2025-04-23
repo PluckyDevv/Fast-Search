@@ -15,8 +15,9 @@ export const bangs = [
     t: '02faq',
     u: 'https://www.bmw2002faq.com/search/?q={{{s}}}',
   },
-  {t: 'vyntr',
-   u: 'https://vyntr.com/search?q={{{s}}}',
+  {
+    t: 'vyntr',
+    u: 'https://vyntr.com/search?q={{{s}}}',
   },
   {
     t: '0bo',
@@ -29,10 +30,6 @@ export const bangs = [
   {
     t: '1001',
     u: 'http://1001boom.com/?s={{{s}}}',
-  },
-  { 
-    t: 'fsh',
-    u: 'http://fishsocial.eletrix.fr/search?s={{{s}}}',
   },
   {
     t: '1001fonts',
