@@ -6,11 +6,6 @@ export default defineConfig({
     minify: 'esbuild',
     target: 'esnext',
     cssMinify: true,
-    rollupOptions: {
-      output: {
-        manualChunks: undefined,
-      },
-    },
   },
   plugins: [
     VitePWA({
