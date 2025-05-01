@@ -1,5 +1,9 @@
 export const bangs = [
   {
+    t: 't3',
+    u: 'https://t3.chat/new?q={{{s}}}',
+  },
+  {
     t: 'clg',
     u: 'https://www.google.com/search?udm=14&q={{{s}}}',
   },
