@@ -1,17 +1,14 @@
-# Fast Search
+# 🪄 Fast Search
 
-Fast Search provides a quicker alternative to DuckDuckGo's bangs system. While DuckDuckGo bangs are powerful, they can sometimes be slow. Fast Search uses a lightweight implementation with cached scripts and service workers to deliver faster performance with the same functionality.
+DuckDuckGo's bang system is great, but slow. Our objective is to fix that!
 
-No tracking, privacy focused.
+## 🤔 Why should you use our service?
 
-## Features
+- [x] 🔖 Completely static - no server requests needed
+- [x] ✒️ Local-first - all processing happens on your machine
+- [x] 🔒 Zero data collection - your privacy is protected
 
-- Lightning fast redirection
-- Customizable default search engine 
-- Privacy focused - no tracking
-- Uses the same bang syntax you're familiar with
-
-## How to Use
+## 🔎 How to Use
 
 Add the following URL to your browser's search engine settings:
 
@@ -19,30 +16,30 @@ Add the following URL to your browser's search engine settings:
 https://fast-search.clst.dev/?q=%s
 ```
 
-Once configured, you can use bangs just like with DuckDuckGo:
-- `!w search term` to search Wikipedia
-- `!g search term` to search Google
-- `!yt search term` to search YouTube
-- And thousands more!
+### 📐 Setting a Default Bang
 
-### Setting a Default Bang
-
-The default bang is Google ('g'). You can change it by visiting:
+The default bang is [Google (`g`)](https://www.google.com/). You can change it by visiting:
 
 ```
-https://fast-search.clst.dev/?s=BANGNAME
+https://fast-search.clst.dev/?s=bang
 ```
 
-Replace `BANGNAME` with your preferred bang (e.g., `w` for Wikipedia, `yt` for YouTube, etc.)
+> [!NOTE]  
+> Be sure to replace `bang` with a valid bang code[^1].
 
-### Removing a Custom Default Bang
+### ❌ Removing a Custom Default Bang
 
-To reset to the system default, visit:
+To reset the default bang to the original setting ([Google (`g`)](https://www.google.com/)), visit:
 
 ```
 https://fast-search.clst.dev/?r=0
 ```
 
-## About
+## ✨ Information
+
+> [!WARNING]  
+> Please be aware that all code is cached. It may take several days for new changes to be reflected.
 
 This project is inspired by [Unduck](https://github.com/t3dotgg/unduck/).
+
+[^1]: Currently, there is no user-friendly website listing all available bangs. However, a developer-friendly list is available in our [repository](https://github.com/PluckyDevv/Fast-Search/blob/main/src/bangs.ts).
