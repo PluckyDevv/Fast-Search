@@ -1,3 +1,6 @@
+> [!WARNING]
+> This project will soon be deprecated in favor of my new project, [O-Search](https://o-search.link). Usage of Fast-Search will still be possible.
+
 # 🪄 Fast Search
 
 DuckDuckGo's bang system is great, but slow. Our objective is to fix that!
