@@ -33,17 +33,48 @@ function getBangUrl() {
   const bangId = (prefixMatch?.[1] ?? suffixMatch?.[1])?.toLowerCase();
 
   let selectedBang = bangId ? bangs.find((bang) => bang.t === bangId) : null;
-  if (!selectedBang) selectedBang = bangs.find((bang) => bang.t === DEFAULT_BANG);
-  if (!selectedBang) selectedBang = bangs.find((bang) => bang.t === DEFAULT_FALLBACK);
+  if (!selectedBang)
+    selectedBang = bangs.find((bang) => bang.t === DEFAULT_BANG);
+  if (!selectedBang)
+    selectedBang = bangs.find((bang) => bang.t === DEFAULT_FALLBACK);
   if (!selectedBang) return null;
 
-  const cleanQuery = query.replace(BANG_PREFIX_REGEX, '').replace(BANG_SUFFIX_REGEX, '').trim();
+  const cleanQuery = query
+    .replace(BANG_PREFIX_REGEX, '')
+    .replace(BANG_SUFFIX_REGEX, '')
+    .trim();
 
   if (!cleanQuery) {
     return new URL(selectedBang.u).origin;
   }
 
-  return selectedBang.u.replace('{{{s}}}', encodeURIComponent(cleanQuery).replace(/%2F/g, '/'));
+  return selectedBang.u.replace(
+    '{{{s}}}',
+    encodeURIComponent(cleanQuery).replace(/%2F/g, '/')
+  );
 }
 
+function youAreCooked() {
+  const date = new Date();
+  const year = date.getFullYear();
+
+  const dismissed = localStorage.getItem('dismissed');
+
+  if (year === 2026 && !dismissed) {
+    alert(
+      [
+        'Please stop using Fast-Search.',
+        'I have decided to stop supporting it. Please use O-Search, my new Fast-Search-like project.',
+        'Know more here: https://www.o-search.link',
+        '',
+        'You will not see this message again.',
+        'Expect Fast-Search to stop working in the days to come.',
+      ].join('\n')
+    );
+
+    localStorage.setItem('dismissed', 'true');
+  }
+}
+
+youAreCooked();
 window.location.replace(getBangUrl() || NOTHING_URL);

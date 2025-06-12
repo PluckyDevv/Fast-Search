@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> This project will soon be deprecated in favor of my new project, [O-Search](https://o-search.link). It will be like Fast-Search, but faster, and better.
+> This project will be closed in 2026 in favor of my new project, [O-Search](https://o-search.link). It will be like Fast-Search, but faster, and better.
 > We recommend you follow us on [X](https://x.com/osearchapp) if you want to know more.
 
 # 🪄 Fast Search
